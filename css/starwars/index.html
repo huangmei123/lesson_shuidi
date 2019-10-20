@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>星球大战</title>
+    <style>
+        *{
+          margin: 0;
+          padding: 0;
+        }
+        body{
+            background: url(./images/bg.jpg);
+        }
+        .starwars-demo{
+            position: absolute;
+            top: 50%;
+            left: 50%; /*l50p +tab*/
+            width: 17em;
+            height: 34em;
+            /* background-color:green; */
+            transform: translate(-50%, -50%); /*移动元素 往左往上都是"-"*/
+            perspective: 800px;  
+            transform-style: preserve-3d;/*支持3D效果*/
+        }
+        .star , .wars{
+        position: absolute;
+        }
+        .star{
+            top:-0.075em;
+            animation: star 10s ease-out infinite;/*ease-out 变速运动 infinite是重复动作(执行次数)*/
+            
+        }
+        @keyframes star {    /*0% ,20%为时间*/
+            0% {
+                opacity: 0;/*不可见*/
+                transform: scale(1.5);/*成像为1.5倍*/
+            }
+            20%{
+                opacity: 1;
+            }
+            89%{
+                opacity: 1;
+                transform: scale(1);
+            }
+            100%{
+                opacity: 1;
+                transform: translateZ( -400em );
+
+            }
+        }
+      
+      
+        .wars{
+            bottom: -0.5em;
+            animation: star 10s ease-out infinite;
+        }
+    </style>
+</head>
+<body>
+    <!-- .starswars-demo>img.star+img.wars +tab键  -->
+    <!-- <div class="starswars-demo">
+        <img src="./images/star.svg" alt="" class="star">
+        <img src="./images/wars.svg" alt="" class="wars">
+    </div>       -->
+    <!-- .starwars-demo>(img.star[src="./images/.svg"]*2)+h2.byline>span*11 +tab键 -->
+    <div class="starwars-demo">
+        <img src="./images/star.svg" alt="" class="star">
+        <img src="./images/wars.svg" alt="" class="wars">
+        <h2 class="byline">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </h2>
+    </div>
+</body>
+</html>
