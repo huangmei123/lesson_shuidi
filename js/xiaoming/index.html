@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>叶玉婷泡仔之旅</title>
+</head>
+<body>
+    <script>
+  //  alert('先变有钱,再泡仔');
+  /*声明对象*/
+  class Flower {
+    // constructor为构造函数 在new时运行
+    constructor( type , n ){
+    //this为添加属性的指向符 
+    this.type=type;
+    this.n=n;
+    }
+  }
+    var tingzong= {
+      name:'婷总',
+      age:3,    /*js中只有整型 不用引号*/
+      favorites:['赚钱','泡仔','赚钱'],
+      room: 2828,
+      yz:60,
+      hometown:'赣州安远',
+      isSingle:true,
+      sendFlower: function(target){
+        var flower= new Flower('红玫瑰',11);
+        console.log(flower.type,flower.n);
+        /*target为形参*/
+        target.receiveFlower(this,flower);
+      }
+    }  
+    var xiaoming={
+     name:'小明',
+     age:18,
+     isGoodMod:false,
+     receiveFlower: function(sender, flower){
+       if(!this.isGoodMod){
+         console.log('丑拒,娘娘心情不好');
+       }else{
+         console.log('万达走一波');
+       }
+       console.log(sender,flower);
+     }
+   }
+    var xiaomei={
+      hometown:'赣州安远',
+      /*接口:不同的对象使用同一个接口*/
+      receiveFlower:function(sender,flower){
+      //  if (sender.name=='婷总')
+      //  {
+      //    console.log('婷总,快来快来...');
+      //  }else{
+        setTimeout(function(){       //定时器setTimeout
+          xiaoming.isGoodMod=true;
+          xiaoming.receiveFlower(sender,flower);
+        },10000)
+        
+       //}
+      }
+    }
+    tingzong.sendFlower(xiaomei);
+   
+    </script>
+   
+</body>
+</html>
