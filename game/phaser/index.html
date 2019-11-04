@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Phaser</title>
+    <script src="https://cdn.bootcss.com/phaser/2.6.2/phaser.min.js"></script>
+</head>
+<body>
+    <div id="game"></div> 
+    <!-- ul>li{$}*10+tab键-->
+    <!-- <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+        <li>8</li>
+        <li>9</li>
+        <li>10</li>
+    </ul> -->
+    <script>
+     //游戏框大小   
+     const width=800, height=600; //常量不可改变
+    //Phaser 游戏框架提供game对象，
+    const game=new Phaser.Game(width,height,Phaser.Auto,'#game',{  //phaser作为游戏框架
+        preload:preload,
+        create:create,
+        update:update
+    })
+    let back,//背景
+    mummy, //精灵
+    anim,// 运动
+    loopText;
+    //预加载资源 游戏的通用
+    function preload(){
+    //  back=game.add.image(0,-400,'lazur')
+    game.load.image('lazur','./thorn_lazur.png');
+    //精灵图 37 45 为每一帧的宽高
+    game.load.spritesheet('mummy','./metalslug_mummy37x45.png',37,45,18);
+    }
+    //创建什么样的场景
+    function create(){
+      back=game.add.image(0,-400,'lazur');
+      back.scale.set(2); //放大
+      back.smoothed=false;
+
+      mummy=game.add.sprite(200,360,'mummy',10);//一次运行的时间为10秒
+      mummy.scale.set(4);
+      mummy.smoothed=false;
+      anim=mummy.animations.add('walk');
+      anim.play(10,true);
+    }
+    //更新
+    function update(){ //背景的变化速度
+      back.x -=1;
+    }
+
+    //  const mrRight={  //JSON对象表达式 const/let
+    //      name:'王',
+    //      age:18
+    //  }
+    //  mrRight,age=19;
+    // var a=2;  //window
+    //  {   //代码块,局部变量
+    //    let a=1; //es6 和es5
+    //    console.log(a);
+    //    //var块级作用域 没有用，window
+    //   // js定义变量，一定会找到相应的作用域再定义scope
+    //  }
+    //  a++;  //访问不到
+    //  console.log(a);
+    const item=document.querySelectorAll('ul>li');
+    //同步的
+    for(let i=0;i<item.length;i++){  //let+{}块级作用域 10个i
+        //事件 JS异步的
+        item[i].addEventListener('click',function(){ //点击时触发
+            alert(i+1);//此时的i为最后循环的i，定义再window上
+        });//添加监听事件
+    }
+    </script>
+</body>
+</html>
