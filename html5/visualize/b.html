@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    canvas{
+        border: 1px solid #000;
+    }
+    </style>
+</head>
+<body>
+    <canvas id="myCanvas" height="500" style="width: 100vm;"></canvas>
+    <script>
+    const canvas=document.getElementById('myCanvas');
+    var ctx=canvas.getContext('2d');
+    ctx.fillStyle='red';
+    ctx.font="50px Verdana";
+    ctx.fillText(1,100,100);
+    let dis=1;
+    function animation(){
+        requestAnimationFrame(function(){ //与电脑刷帧一致
+            //(300,150)为位置坐标
+            ctx.clearRect(0,0,300,150);//擦除
+            ctx.fillText(++dis,200,100);
+            // ctx.fillText(++dis,Math.random()*300,Math.random()*150)
+            animation();
+           //递归 自己调用自己  
+        })
+    }
+    animation();
+   
+    // canvas.style.width='50vw'; //将品目分成100份(vw)
+    // canvas.style.width='50vh';
+    // canvas.width=window.innerWidth;
+    // canvas.height=window.innerHeight;  
+    </script>
+</body>
+</html>
