@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./animate.css">
+</head>
+<body>
+    <div id="skyscapper">
+       <!-- .#box$*3 -->
+        <div class="box" id="box1"></div>
+        <div class="box" id="box2"></div>
+        <div class="box" id="box3"></div>    
+        <div class="box" id="box4"></div> 
+    </div>
+    <script src="./gasp.min.js"></script>
+    <script src="./animate.js"></script>
+    <!-- //TimelineMax()线性运动库   ----------------进行封装
+    // var tl=new TimelineMax({
+    //     repeat:-1, //一个往前 一个往后 重复运动
+    //     yoyo:true, //重复
+    //     repeatDelay:1
+    // })
+    // //运动起始点
+    // tl.from(['#box1,#box2'],0.3,{x:'-=50%'}); //往左移动宽度的50%
+    // tl.from(['#box2'],0.3,{x:'+=50%'}); 
+
+
+     //假如这个动画在其他一些地方也要使用 -->
+   <script>
+//    第四个元素 根第二个元素一样动
+//    box.html  a.html 
+   var skyObj={
+       leftAnimated:['#box1','#box3'],
+       rightAnimated:['#box2','#box4']
+   }
+   new Animation(skyObj)
+   </script>
+</body>
+</html>
