@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+ <body>
+    <!-- 页面端(前端)
+    小程序端
+    页面只是模版 ejs 数据何来？js主动拉取
+    fetch 叫作ajax 作用：异步获取远程的数据 --> 
+   <div id="fields"></div>
+    <script>
+    //  异地的数据拿去(不同国家)
+        const streetCarsPromise=fetch('http://data.ratp.fr/api/datasets/1.0/search/?q=paris');
+        const postPromiae=fetch('https://wesbos.com/wp-json/wp/v2/posts');
+        // postPromiae
+        // .then(response=>response.json())
+        // .then(data =>{           
+        //     console.log(data);
+        // })
+    Promise
+    .all([postPromiae,streetCarsPromise])
+    .then(responses=>{
+        return Promise.all(responses.map(res=>res.json()))
+        //console.log(response);
+        // 返回Promise
+        //1.json()文件流数组=>json() 数组map
+        //2.promise数组 then
+    })
+    //等到2个json
+    .then(responses=>{
+        console.log(responses)
+    })
+//  fetch('http://data.ratp.fr/api/datasets/1.0/search/?q=paris')
+//     //等我取数据
+//     .then(response=>response.json())
+//     //到达的是流数据
+//     .then(res=>{
+//         // console.log(res);
+//         const fields=res.datasets[0].fields;
+//         document.getElementById('fields').innerHTML=fields
+    
+//         .map(field=>
+//          `<div>
+//                 ${field.type}-${field.name}
+//         </div>`     ---``字符串模板符号
+//         ).join('')
+//     })
+// console.log('AAAA') -->
+
+</script>
+</body>
+</html>
