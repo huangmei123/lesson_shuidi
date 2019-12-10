@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>爬取top250电影</title>
+</head>
+<body>
+<div class="wrapper">
+ <div class="content">
+    <!-- 网页的布局 平面报纸 整个布局16列 占8列 -->
+  <div class="grid-16-8">
+  <div class="article">
+    <!-- 列表 序号 有序列表 语义化标签-->
+    <!-- ol.grid_view>li -->
+    <ol class="grid_view">
+        <li>
+          <div class="item"> <!--每一个块的下划线 -->
+            <div class="pic">
+              <em>1</em> <!--  排位 -->
+              <a href="movie.douban.com/subject/123">
+                <!-- 有助于一些使用助听器访问网站的人 -->
+                <!-- webp图片 -->
+                <img src="https://img3.doubanio.com/view/photo/s_ratio_poster/public/p480747492.webp" alt="肖洛克的救赎">
+            </a>
+            </div>
+            <div class="info">
+               <div class="hd">
+                 <a href="">
+                     <span class="title">肖洛克的救赎</span>
+                     <span class="title">
+                       &nbsp;&nbsp;TheShawshank Redemption
+                     </span>
+                     <span class="other">
+                         &nbsp;/&nbsp;月黑风高
+                     </span>
+                 </a>
+                 <span class="playable">[可播放]</span>
+               </div>
+               <div class="bd">
+                   <p>
+                        导演: 弗兰克·德拉邦特 Frank Darabont   主演: 蒂姆·罗宾斯 Tim Robbins /...
+                        <br>
+                        1994 / 美国 / 犯罪 剧情
+                   </p>
+                   <!-- .star>.span.rating5-t+span.rating_num 评星 -->
+                   <div class="star">
+                       <div class="span rating5-t"></div>
+                       <span class="rating_num">9.7</span>
+                       <span>1714400评价</span>
+                   </div>
+                   <p class="quote">
+                       <span class="inq">希望让人自由</span>
+                   </p>
+               </div>
+            </div>
+          </div>
+        </li>
+    </ol>
+    <!-- 分页  功能 url传递参数 -->
+    <div class="pagination">
+     <span class="prev">$lr;前页</span>
+     
+     <!-- a[href="?start=$"]{$}*10 -->
+     <span class="thispage">1</span>
+     <a href="?start=25">2</a>
+     <a href="?start=50">3</a>
+     <a href="?start=75">4</a>
+     <a href="?start=100">5</a>
+     <a href="?start=125">6</a>
+     <a href="?start=150">7</a>
+     <a href="?start=175">8</a>
+     <a href="?start=200">9</a>
+     <a href="?start=225">10</a>
+     <span class="next">
+         <a href="?start=25">后页</a>
+     </span>
+    </div>
+  </div>
+  </div>
+ </div>
+</div>
+
+</body>
+</html>
