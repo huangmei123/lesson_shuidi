@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>单例模型</title>
+    <style>
+    #modal{
+        height: 200px;
+        width: 200px;
+        /* 文字占的行高 */
+        line-height: 200px;
+        position: fixed;
+        left: 50%;
+        top:50%;
+        transform: translate(-50%,-50%);
+        border: 1px solid black;
+        text-align: center;
+        /* background-color: rgba(0,0,0,.3); */
+    }
+    /* 伪类选择器
+    #open{
+        cursor: pointer;
+    }
+    #open:disabled{
+        cursor: not-allowed;
+    } */
+    </style>
+</head>
+<body>
+    <button id="open">打开弹框</button>
+    <button id="close">关闭弹框</button>
+    <script>
+        //立即执行函数
+        const Modal=(function(){
+          //立即执行函数外面嵌了一层函数 闭包
+          let modal=null;//模态框  闭包区域 无法被回收内存
+          return function(){
+              if(!modal){
+                  //创建一次
+                  modal=document.createElement('div');
+                  modal.innerHTML='我是一个全局的唯一modal';
+                  modal.id='modal';
+                  modal.style.display='none';
+                  document.body.appendChild(modal);
+              }
+             return modal;//Modal被运行时
+          }
+        })();
+    document.getElementById('open').addEventListener('click',function(){
+        const modal=new Modal();
+        modal.style.display='block';
+    // 做一个弹窗，让它显示或隐藏
+    // 90%的网站都是不登录的，即一开始的时候不用加载，是点击的时候动态的加载
+    // 创建节点
+  
+    // document.getElementById('modal');
+    // const modal=document.createElement('div');
+    // modal.innerHTML='我是一个全局的唯一modal';
+    // modal.id="modal";
+    // // 挂载
+    // document.body.appendChild(modal);
+    // this.setAttribute('disabled','disabled');//禁用按钮
+     })
+    document.getElementById('close').addEventListener('click',()=>{  
+         const modal=new Modal();
+         modal.style.display='none';
+    //     // document.getElementById('modal').style.display='none';
+    //     // 一开始就点的关闭弹框
+    //    if (document.getElementById('modal')){
+    //        document.body.removeAttribute(document.getElementById('modal'));
+    //        document.getElementById('open').removeAttribute('disabled');
+    //    }
+     })
+    </script>
+</body>
+</html>
