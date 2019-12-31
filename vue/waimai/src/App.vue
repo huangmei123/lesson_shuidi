@@ -11,7 +11,7 @@
       
     </div>
     <router-view/>
-    <v-footer/>
+    <!-- <v-footer/> -->
   </div>
 </template>
 <script>
