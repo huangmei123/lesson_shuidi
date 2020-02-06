@@ -1,7 +1,7 @@
 {
   "name": "big_file_upload",
   "version": "1.0.0",
-  "description": "",
+  "description": "https://juejin.im/post/5dff8a26e51d4558105420ed\r 文件上传是开发中的难点，大文件上传及断点续传 难点中的细节及核心技术点。\r 在考察es6文件对象 ajax上传 async await promise 后台文件存储、流操作等全面的全栈技能的同时提升\r 难度到大文件和断点续传。",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
