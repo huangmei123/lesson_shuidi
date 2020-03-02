@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hello world</title>
+    <script type="text/javascript" src="../assets/js/vue.js"></script>
+</head>
+<body>
+    <h1>v-model实例</h1>
+    <hr>
+    <div id="app">
+        <p>原始文本信息：{{message}}<br/></p>
+        <p><input type="text" v-model="message"></p>
+        <p><input type="text" v-model.lazy="message"></p>
+        <p><input type="text" v-model.number="message"></p>
+        <p><input type="text" v-model.trim="message"></p>
+        <hr>
+        <h3>文本域</h3>
+        <textarea cols="30" rows="10" v-model="message"></textarea>
+        <hr>
+        <h3>多选框绑定一个值</h3>
+        <input type="checkbox" id="istrue" v-model="istrue" >
+        <label for="istrue">{{istrue}}</label>
+        <hr>
+        <p>
+            <input type="checkbox" id="jspang" value="jspang" v-model="web_names">
+            <label for="istrue">jspang</label> 
+            <input type="checkbox" id="pang" value="pang" v-model="web_names">
+            <label for="istrue">pang</label> 
+            <input type="checkbox" id="js" value="js" v-model="web_names">
+            <label for="istrue">js</label> 
+        </p>
+    <script type="text/javascript">
+    var app= new Vue({
+        el:'#app',
+        data:{
+            message:'hello world',
+            istrue:true,
+            web_names:[]
+        }
+
+    })
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>slot</title>
+    <script type="text/javascript" src="../assets/js/vue.js"></script>
+</head>
+<body>
+    <h1>slot的学习</h1>
+    <hr>
+    <div id="app">
+      <navigation-link url="http://baidu.com"></navigation-link>
+    </div>
+    <script type="text/javascript">
+    Vue.component('navigation-link',{
+        props:['url']
+        <template>
+        <a v-bind:href="url" >
+            Hello world
+  
+        </a>
+        </template>
+    })
+    var app= new Vue({
+        el:'#app',
+        data:{
+        },
+        methods:{
+
+        }
+    })
+    </script>
+</body>
+</html>

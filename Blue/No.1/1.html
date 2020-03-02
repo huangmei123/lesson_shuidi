@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1{
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+            /* display: none;  */
+        }
+    </style>
+    <script>
+        function toGreen(){
+            var ODiv=document.getElementById('div1');
+            ODiv.style.width='100px';
+            ODiv.style.background='Green';
+        }
+        function toRed(){
+            var IDiv=document.getElementById('div1');
+            IDiv.style.width='100px';
+            IDiv.style.background='red';
+        }
+    </script>
+</head>
+
+<body>
+    <input type="checkbox" onmouseover="toGreen()" onmouseout="toRed()"  />
+    <div id="div1">
+        hello world
+    </div>
+</body>
+</html>
