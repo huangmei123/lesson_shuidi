@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v-bind</title>
+    <script type="text/javascript" src="../assets/js/vue.js"></script>
+</head>
+<body>
+    <h1>v-bind</h1>
+    <hr>
+    <div id="app">
+        <p><img v-bing:src="" width="200px"/></p>
+        <p><a :href="webUrl" target="_blank">技术胖</a></p>
+        <hr>
+        <div :class="className">1.绑定Class</div>
+        <div :class="{classA:isOK}">2.绑定Class中的判断</div>
+        <hr>
+        <div>
+            <input type="checkbox" id="isOK" v-model="isOK">
+            <label for="isOK">isOK={{isOK}}</label>
+        </div>
+        <div :style="styleObject">6、用对象绑定style样式</div>
+    </div>
+    <style>
+        .classA{
+            color: red;
+        }
+        .classB{
+            font-size: 150%;
+        }
+    </style>
+    <script type="text/javascript">
+    var app= new Vue({
+        el:'#app',
+        data:{
+            imgSrc:"",
+            webUrl:'http://jspang.com',
+            className:'classA',
+            isOK:false,
+            styleObject:{
+           fontSize:'24px',
+           color:'green'
+            }
+        
+        }
+
+    })
+    </script>
+</body>
+</html>
