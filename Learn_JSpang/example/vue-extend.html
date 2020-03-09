@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue-extend</title>
+    <script type="text/javascript" src="../assets/js/vue.js"></script>
+</head>
+<body>
+    <h1>vue-extend</h1>
+    <hr>
+   <author></author>
+    <script type="text/javascript">
+    var authorUrl =Vue.extend({
+        template:"<p><a :href='authorUrl'>{{authorName}}</a></p>",
+        data:function(){
+            return{
+                authorName:'jspang',
+                authorUrl:'http://jspang.com'
+            }
+        }
+    });
+    //所有的构造器都需要加载到上面
+    new authorUrl().$mount("author");
+    </script>
+</body>
+</html>

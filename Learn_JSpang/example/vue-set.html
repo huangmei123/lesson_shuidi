@@ -1,0 +1,73 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue-set</title>
+    <script type="text/javascript" src="../assets/js/vue.js"></script>
+</head>
+<body>
+    <h1>vue-set</h1>
+    <hr>
+    <div id="app">
+        {{count}}
+    </div>
+    <p><button onclick="add()">add</button></p>
+
+    <script type="text/javascript">
+    function add(){
+        Vue.set(outData,'count',2);//用Vue.set改变
+        app.count++;//用Vue对象的方法添加
+        outData.count++;//直接操作外部数据
+    }
+    //在构造器外部声明数据
+    var outData={
+        // count:1,
+        // goodName:'car'
+        arr:['aaa','bbb','ccc']
+    };
+    var app=new Vue({
+        el:'#app',
+        //引用外部数据
+        data:outData
+    })
+    </script>
+</body> -->
+<!-- </html> -->
+
+<!-- //vue-set存在的意义 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="../assets/js/vue.js"></script>
+    <title>Vue.set 全局操作</title>
+</head>
+<body>
+    <h1>Vue.set 全局操作</h1>
+    <hr>
+    <div id="app">
+        <ul>
+            <li v-for=" aa in arr">{{aa}}</li>
+        </ul>
+
+    </div>
+    <button onclick="add()">外部添加</button>
+
+    <script type="text/javascript">
+
+        function add(){
+            console.log("我已经执行了");
+           app.arr[1]='ddd';
+           //Vue.set(app.arr,1,'ddd');
+        }
+        var outData={
+            arr:['aaa','bbb','ccc']
+        };
+        var app=new Vue({
+            el:'#app',
+            data:outData
+        })
+    </script>
+</body>
+</html>
