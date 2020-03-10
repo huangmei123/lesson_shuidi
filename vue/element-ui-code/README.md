@@ -25,4 +25,18 @@
 import Element from 'element-ui'
 Vue.sue(ElementUI)
 所有组件就可以全局使用了
+- vue.use在背后在干什么？
+- 如果我只想使用部分组件 怎么解决
+
+
+- 每一个组件都是一个目录
+  carousel组件 设计成一个父子组件 各司其职
+  carousel-item
+  carousel是容器组件 里面的是子组件 slot
+
+
+- element-ui 组件开发 
+  一个组件像一个项目一样来开发
+  index.js 方便安装 install vue.component
+  
 

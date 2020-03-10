@@ -1,7 +1,11 @@
 <template>
   <div id="app">
-    <el-alert title="成功提示的文案" type="success">
-    </el-alert>
+    <carousel>
+      <carousel-item/>
+    </carousel>
+    <!-- <carousel-item/> -->
+    <!-- <el-alert title="成功提示的文案" type="success">
+    </el-alert> -->
     <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
     <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
   </div>
@@ -13,7 +17,8 @@ import ElAlert from './components/ElAlert.vue'
 export default {
   name: 'App',
   components: {
-    ElAlert
+    // ElAlert
+    // carousel:'Carousel'
   }
 }
 </script>
