@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img width="652" height="652"
+    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAAklEQVR4AewaftIAAABtSURBVI3Buw4BYRCA0W8ulUKsdQ3xEgqJUqfx/i9BJOjmz9BsslHNOfKTFHhmUqEUKX82+wOX641u3uPumBmqhpsZiCBAv1wx7RbYZIaaExEMtLVGiyAieD7urLc7jqczn/eLMQGSAqVIKVKKvtkwGZ+gu2WLAAAAAElFTkSuQmCC"
+     alt=""
+     data-src="/in.png" class="lazyload">
+     <script>
+         window.onload=function(){
+             const img=document.querySelector('.lazyload');
+             const real_src= img.getAttribute('data-src');
+             const oImg=document.createElement('img');  
+             oImg.onload=function(){
+                setTimeout(() =>{
+                    img.src=real_src
+                },3000)  
+             }
+             oImg.src=real_src;
+         }
+     </script>
+</body>
+</html>
