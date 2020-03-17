@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>04mount</title>
+    <script type="text/javascript" src="../assets/js/vue.js"></script>
+</head>
+<body>
+    <h1>04mount</h1>
+    <hr>
+    <div id="app"> 
+    </div>
+
+    <p><button onclick="destroy()">卸载</button></p>
+    <script type="text/javascript">
+    var jspang=Vue.extend({
+        template:`<p>{{message}}</p>`,
+        data:function(){
+            return{
+                message:'hello Iam jspang'
+            }
+        },
+        mounted:function(){
+            console.log("创建了");
+        },
+        destroyed:function(){
+            console.log("卸载了")
+        }
+    })
+
+    var vm =new jspang().$mount("#app");
+
+    function destroy(){
+     vm.$destroy();
+        }
+        function tick(){
+    vm.message="update message info ";
+    vm.$nextTick(function(){
+        console.log('message更新完后我被调用了');
+    })
+}
+    </script>
+</body>
+</html>
