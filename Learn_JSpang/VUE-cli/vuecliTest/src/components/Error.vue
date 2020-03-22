@@ -1,22 +1,19 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-    <router-view class="aaa"></router-view>
+    页面不存在
   </div>
 </template>
-
 <script>
 export default {
   name: 'hi',
   data () {
     return {
-      msg: 'Hi, I am JSPang'
+      msg: 'Error:404'
     }
   }
 }
 </script>
-
-
 <style scoped>
 
 </style>
